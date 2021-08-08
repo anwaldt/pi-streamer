@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<aj-snapshot>
+<jack>
+  <client name="system">
+    <port name="capture_1">
+      <connection port="darkice:left" />
+    </port>
+    <port name="capture_2">
+      <connection port="darkice:right" />
+    </port>
+  </client>
+  <client name="SuperCollider">
+    <port name="out_1">
+      <connection port="system:playback_1" />
+      <connection port="darkice:left" />
+    </port>
+    <port name="out_2">
+      <connection port="system:playback_2" />
+      <connection port="darkice:right" />
+    </port>
+  </client>
+</jack>
+</aj-snapshot>

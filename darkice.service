@@ -1,0 +1,14 @@
+[Unit]
+Description=Darkice Icecast Service
+After=jack.service network.target network-online.target
+Wants=network-online.target
+
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/cast
+ExecStart=/usr/bin/darkice -c darkice.cfg
+
+[Install]
+WantedBy=default.target
+

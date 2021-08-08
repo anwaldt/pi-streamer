@@ -1,0 +1,19 @@
+[Unit]
+Description=SuperCollider Service
+After=jack.service
+Requires=jack.service
+
+
+[Service]
+Type=idle
+PrivateTmp=true
+Environment="QT_QPA_PLATFORM=offscreen"
+ExecStartPre=/bin/sleep 2
+WorkingDirectory=/home/pi/cast
+#ExecStart=/usr/bin/pd -jack -nogui testtone.pd
+ExecStart=/usr/bin/sclang testtone.scd
+
+[Install]
+WantedBy=default.target
+#WantedBy=multi-user.target
+

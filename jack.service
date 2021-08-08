@@ -1,0 +1,13 @@
+[Unit]
+Description=JACK server
+After=sound.target
+
+[Service]
+ExecStart=/usr/bin/jackd -P 95 -d alsa -d hw:CODEC -r 44100 -p 128
+#ExecStart=/usr/bin/jackd -P 95 -d dummy -r 44100 -p 128
+LimitRTPRIO=95
+LimitRTTIME=infinity
+LimitMEMLOCK=infinity
+
+[Install]
+WantedBy=default.target
